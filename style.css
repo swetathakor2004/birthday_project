@@ -1,0 +1,247 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f2;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* header style */
+header {
+    background-color: #ff99cc;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'pacifico', cursive;
+    font-size: 3em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* Slideshow Style Start  */
+
+.slideshow-container {
+     max-width: 800px; /* Max width od the slideshow  */
+     position: relative;
+     margin: auto;
+     background-color: #fff;  /* White background for slideshow area  */
+     border-radius: 15px;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+     padding: 20px;
+     box-sizing: border-box;  /* Include padding in element's total width and height */
+     margin-top: 30px;
+     margin-bottom: 30px;
+}
+
+.slide {
+    display: none; /* Hide slides by default, JS will show them */
+    text-align: center;
+    position: relative; /* For text positioning */
+}
+
+.silde imge, .silde video {   /* Styling for both images and videos */
+    width: 100%;
+    height: 450%;   /* Fixed height for consistency */
+    object-fit: contain;    /* 'contain' will fit the media within the element's box, preserving aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;   /* Space below media before text */
+    display: block;   /* Remove extra space below inline elements */
+}
+
+.slide .text {
+    color: #555;
+    font-size: 1.5em;
+    padding: 15px 20px;
+    position: absolute;  /* Position over media or below */
+    bottom: 0;    /* Align to bottom */
+    width: calc(100% -40px);   /* Adjust width for padding */
+    left: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);    /* Semi-transparent background */
+    border-radius: 0 0 10px 10px;
+    font-family: 'pacifico', cursive;    /* Cute font for captions */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+}
+
+/* Special Message Slide Styling */
+.special-message-slide {
+    background-color: #fff0f5;/* Lighter pink for message card */
+    border: 2px dashed #ff99cc;  /* Dashed border for a cute look */
+    padding: 40px;
+    min-height: 450px;  /* Same height as media for consistent layout */
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.special-message-slide .message-content h2 {
+    font-family: 'pacifico',cursive;
+    color: #ff66b2;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.special-message-slide .message-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.0;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.6);/* Semi-transparent black */
+    z-index: 2;/* Make sure buttons are on top of slides */
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background with a little more opacity */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/circles */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #ff66b2;  /* Active dot color */
+}
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    form {opacity: .4;}
+    to {opacity: 1;}
+}
+
+/* Music Button Styling */
+.music-button {
+    background-color: #ff66b2; /* Pink color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;/* Pill shape */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px; /* Space from slideshow */
+    display: block; /* Make it a block element */
+    margin-left: auto;/* Center the button */
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.music-button:hover {
+    background-color: #f39; /* Darker pink on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+/* --- Slideshow Styles End --- */
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #ffcced;
+    color: #666;
+    font-size: 0.95em;
+    margin-top: 50px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    header p {
+        font-size: 1em;
+    }
+
+    .slideshow-container {
+        padding: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .slide img, .slide video {
+        height: 300px;
+    }
+
+    .slide .text {
+        font-size: 1.1em;
+        padding: 10px 15px;
+        left: 10px;
+        width: calc(100% -20px);
+    }
+
+    .special-message-slide {
+        padding: 20px;
+        min-height: 300px;
+    }
+
+    .special-message-slide .message-content h2 {
+        font-size: 1.8em;
+    }
+
+    .special-message-slide .message-content p {
+        font-size: 1em;
+    }
+
+    .prev, .next {
+        font-size: 18px;
+        padding: 10px;
+        margin-top: -15px;
+    }
+    .music-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
